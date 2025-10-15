@@ -20,8 +20,8 @@ export class Device {
   @Prop()
   browser?: string;
 
-  @Prop()
-  lastLoginAt?: Date;
+  @Prop({ default: Date.now() })
+  lastLoginAt: Date;
 
   @Prop({ type: Types.ObjectId, ref: 'User', required: true })
   userId: Types.ObjectId;

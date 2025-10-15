@@ -1,15 +1,15 @@
 import * as bcrypt from 'bcrypt';
 
-export class PasswordUtils {
-  static async hashPassword(password: string): Promise<string> {
+export class BcryptUtils {
+  static async hash(password: string): Promise<string> {
     const saltRounds = 10;
     return await bcrypt.hash(password, saltRounds);
   }
 
-  static async comparePasswords(
-    plainPassword: string,
-    hashedPassword: string,
+  static async compare(
+    plainString: string,
+    hashedString: string,
   ): Promise<boolean> {
-    return await bcrypt.compare(plainPassword, hashedPassword);
+    return await bcrypt.compare(plainString, hashedString);
   }
 }

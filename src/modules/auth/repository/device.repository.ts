@@ -1,9 +1,10 @@
 import { BaseRepository } from '../../../common/repository/base.repository';
 import { DeviceDocument } from '../schemas/device.schema';
+import { Types } from 'mongoose';
 
-export abstract class DeviceV2Repository extends BaseRepository<DeviceDocument> {
+export abstract class DeviceRepository extends BaseRepository<DeviceDocument> {
   abstract findByUserIdAndIpAddress(
-    userId: string,
+    userId: Types.ObjectId,
     ipAddress: string,
   ): Promise<DeviceDocument | null>;
 }
