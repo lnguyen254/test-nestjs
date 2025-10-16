@@ -6,7 +6,7 @@
     - Optimize imports
     - Run prettier
 - Set up global pipe and interceptor (main.ts)
-- Error in class-validator (<ERROR_CODE>:<message>)
+- Error in class-validator (<ERROR_CODE>:<message>) (validation-exception.filter.ts)
 - Set up a common ResponseDto (both success and error)
 - Provide a list of error codes for common
 - Structure to create a NestJS module (Module, Repository (Repository and RepositoryImpl), Service, Controller)

@@ -16,8 +16,11 @@ export class HttpExceptionFilter implements ExceptionFilter {
     const req = ctx.getRequest<Request>();
 
     const status = exception.getStatus() || HttpStatus.INTERNAL_SERVER_ERROR;
-    const message = exception.message || 'Internal Server Error';
     const eR = exception.getResponse() as Record<string, any>;
+
+    // Because of validation exception --> message can be a string or string[] (eR.message)
+    const message: string | string[] =
+      eR.message || exception.message || 'Internal Server Error';
 
     const errResponse = new ResponseDto({
       status,
